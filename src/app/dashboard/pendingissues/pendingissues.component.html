@@ -1,0 +1,32 @@
+<p>pendingissues works!</p>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3>Login Form</h3>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" formControlName="first_name" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
+                        <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                            <div *ngIf="f.first_name.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>emai</label>
+                        <input type="email" formControlName="emai" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.emai.errors }" />
+                        <div *ngIf="submitted && f.emai.errors" class="invalid-feedback">
+                            <div *ngIf="f.emai.errors.required">email is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Submit</button>&nbsp;
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
